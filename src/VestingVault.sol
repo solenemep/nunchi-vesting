@@ -5,7 +5,9 @@ import {ERC20} from "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol"
 import {Ownable} from "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
 contract ERC20Mintable is ERC20 {
-    constructor() ERC20("Mintable Token", "MTK") {}
+    constructor() ERC20("Mintable Token", "MTK") {
+        _mint(msg.sender, 1_000_000e18);
+    }
 }
 
 interface IVestingVaultErrors {
